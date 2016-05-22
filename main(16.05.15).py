@@ -9,4 +9,3 @@ data = urllib.request.urlopen(url).read()
 xmlFile = "test.xml"
 f = open(xmlFile, "wb")
 f.write(data)
-f.close()
