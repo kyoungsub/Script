@@ -29,10 +29,9 @@ def getDataFromServiceArea(serviceArea):
     conn.request("GET", "/exopenapi/business/representFoodServiceArea?serviceKey=d%2Bgpbsvn3Vl5kqm1vaj9PqFxvOKhhGQ74xWyyrZG7803Gpkg%2BRsycotbu0JZ8sIVDT5jbpE2Ey5DzZdSXAVB2g%3D%3D&type=xml&serviceAreaName=" +  str(urllib.parse.quote(serviceArea)))
     req = conn.getresponse()
     #req.add_header('User-Agent', User_Agent)
-    print(req.status, req.reason)  
     
-#    cLen = req.getheader("Content-Length")
     if int(req.status) == 200 :
+        print("검색 완료!")
         return extractData(req.read().decode("utf-8"))
     conn.close()
     pass
@@ -42,10 +41,17 @@ def extractData(strXml):
     tree = ElementTree.fromstring(strXml)
     listElements = tree.getiterator("list")
     for list in listElements:
+        direction = list.find("direction")
         serviceAreaName = list.find("serviceAreaName")
         menu = list.find("batchMenu")
-        print(serviceAreaName)
-        print (menu)
+        salePrice = list.find("salePrice")
+        if len(menu.text) > 0 :
+            print('===========================')
+            print("방향:", direction.text)
+            print("휴게소 이름:", serviceAreaName.text, "휴게소")
+            print("가격:", salePrice.text)
+            print ("메뉴:", menu.text)
+            print('===========================')
 #        if len(menu.text) > 0 :
 #            return {"serviceAreaName":serviceAreaName.text, "menu":menu.text}
     pass
