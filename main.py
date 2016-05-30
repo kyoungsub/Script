@@ -53,6 +53,7 @@ def extractArea(strXml):
                 print('===========================')
     else:
         print('\n그런 곳 없음ㅋ')
+        
 #        if len(menu.text) > 0 :
 #            return {"serviceAreaName":serviceAreaName.text, "menu":menu.text}
     pass
@@ -90,12 +91,10 @@ def extractRoute(strXml):
             print('===========================')
             print("노선명:", routeName.text)
             print("방향:", direction.text)
-            print("경로 이름:", serviceAreaName.text)
+            print("경로 이름:", serviceAreaName.text, "휴게소")
             print('============================')
     else:
         print('\n그런 곳 없음ㅋ')
-#        if len(menu.text) > 0 :
-#            return {"routeName":routeName.text, "menu":menu.text}
     pass
 #==============================================================================
 

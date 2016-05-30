@@ -19,7 +19,6 @@ def getDataFromServiceArea(serviceArea):
     #req.add_header('User-Agent', User_Agent)
     
     if int(req.status) == 200 :
-        print("\n 검색 완료!")
         return extractArea(req.read().decode("utf-8"))
     conn.close()
     pass
@@ -27,6 +26,7 @@ def getDataFromServiceArea(serviceArea):
 def extractArea(strXml):
     tree = ElementTree.fromstring(strXml)
     listElements = tree.getiterator("list")
+<<<<<<< HEAD
     for list in listElements:
         direction = list.find("direction")
         serviceAreaName = list.find("serviceAreaName")
@@ -41,6 +41,35 @@ def extractArea(strXml):
             print('===========================')
         else:
             print("거긴 먹을게 없어....그냥 지나가자")
+=======
+    
+    dataElements = tree.getiterator("data")
+    for i in dataElements:
+        cnt = i.find("count")
+        
+    if cnt.text != '0':
+        print("\n검색 완료!")
+        for list in listElements:
+            direction = list.find("direction")
+            serviceAreaName = list.find("serviceAreaName")
+            menu = list.find("batchMenu")
+            salePrice = list.find("salePrice")
+            if(menu == None):
+                print('===========================')
+                print("방향:", direction.text)
+                print("휴게소 이름:", serviceAreaName.text, "휴게소")
+                print("메뉴: 메뉴가 없다.. 얼탱이가 없으시네ㅋㅋㅋㅋ")
+                print('===========================')
+            else:   
+                print('===========================')
+                print("방향:", direction.text)
+                print("휴게소 이름:", serviceAreaName.text, "휴게소")
+                print("가격:", salePrice.text)
+                print("메뉴:", menu.text)
+                print('===========================')
+    else:
+        print('그런 곳 없음ㅋ')
+>>>>>>> origin/master
 #        if len(menu.text) > 0 :
 #            return {"serviceAreaName":serviceAreaName.text, "menu":menu.text}
     pass
@@ -55,7 +84,7 @@ def getDataFromRouteName(route):
     #req.add_header('User-Agent', User_Agent)
     
     if int(req.status) == 200 :
-        print("\n 검색 완료!")
+        print("\n검색 완료!")
         return extractRoute(req.read().decode("utf-8"))
     conn.close()
     pass
@@ -79,7 +108,7 @@ def extractRoute(strXml):
 #==============================================================================
 
 def printmenu():
-    print("\n 엄마 휴게소 얼마나 걸려? ") 
+    print("\n엄마 휴게소 얼마나 걸려? ") 
     print("==========Menu========")
     print("   휴게소로 검색 : 1")
     print("   경로로 검색 : 2")
