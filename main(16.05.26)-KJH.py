@@ -4,6 +4,7 @@
 
 import http.client
 import urllib
+from xml.etree import ElementTree
 
 #global
 loopflag = 1
@@ -23,9 +24,24 @@ def getDataFromServiceArea(serviceArea):
     pass
 
 def extractArea(strXml):
-    from xml.etree import ElementTree
     tree = ElementTree.fromstring(strXml)
     listElements = tree.getiterator("list")
+<<<<<<< HEAD
+    for list in listElements:
+        direction = list.find("direction")
+        serviceAreaName = list.find("serviceAreaName")
+        menu = list.find("batchMenu")
+        salePrice = list.find("salePrice")
+        if len(menu.text) > 0 :
+            print('===========================')
+            print("방향:", direction.text)
+            print("휴게소 이름:", serviceAreaName.text, "휴게소")
+            print("가격:", salePrice.text)
+            print ("메뉴:", menu.text)
+            print('===========================')
+        else:
+            print("거긴 먹을게 없어....그냥 지나가자")
+=======
     
     dataElements = tree.getiterator("data")
     for i in dataElements:
@@ -53,6 +69,7 @@ def extractArea(strXml):
                 print('===========================')
     else:
         print('그런 곳 없음ㅋ')
+>>>>>>> origin/master
 #        if len(menu.text) > 0 :
 #            return {"serviceAreaName":serviceAreaName.text, "menu":menu.text}
     pass
@@ -73,7 +90,6 @@ def getDataFromRouteName(route):
     pass
 
 def extractRoute(strXml):
-    from xml.etree import ElementTree
     tree = ElementTree.fromstring(strXml)
     listElements = tree.getiterator("list")
     for list in listElements:

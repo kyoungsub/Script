@@ -4,7 +4,7 @@
 
 import http.client
 import urllib
-
+from xml.etree import ElementTree
 #global
 loopflag = 1
 
@@ -23,11 +23,10 @@ def getDataFromServiceArea(serviceArea):
     pass
 
 def extractArea(strXml):
-    from xml.etree import ElementTree
     tree = ElementTree.fromstring(strXml)
     listElements = tree.getiterator("list")
-    
     dataElements = tree.getiterator("data")
+    
     for i in dataElements:
         cnt = i.find("count")
         
@@ -52,7 +51,8 @@ def extractArea(strXml):
                 print("메뉴:", menu.text)
                 print('===========================')
     else:
-        print('그런 곳 없음ㅋ')
+        print('\n그런 곳 없음ㅋ')
+        
 #        if len(menu.text) > 0 :
 #            return {"serviceAreaName":serviceAreaName.text, "menu":menu.text}
     pass
@@ -72,28 +72,27 @@ def getDataFromRouteName(route):
     pass
 
 def extractRoute(strXml):
-    from xml.etree import ElementTree
     tree = ElementTree.fromstring(strXml)
     listElements = tree.getiterator("list")
-    
     dataElements = tree.getiterator("data")
+    
     for i in dataElements:
-        cnt = i.find("count")
-        
+        cnt = i.find("count")    
+    
     if cnt.text != '0':
         print("\n검색 완료!")
         for list in listElements:
             direction = list.find("direction")
             routeName = list.find("routeName")
             serviceAreaName = list.find("serviceAreaName")
-            
+
             print('===========================')
             print("노선명:", routeName.text)
             print("방향:", direction.text)
             print("휴게소 이름:", serviceAreaName.text, "휴게소")
             print('============================')
     else:
-        print('그런 노선 없음ㅋ')
+        print('\n그런 노선 없음ㅋ')
 #        if len(menu.text) > 0 :
 #            return {"routeName":routeName.text, "menu":menu.text}
     pass
