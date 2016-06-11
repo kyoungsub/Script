@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>537</width>
+    <height>411</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>537</width>
+    <height>411</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>537</width>
+    <height>411</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QTabWidget" name="Top">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>531</width>
+     <height>411</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>531</width>
+     <height>411</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>531</width>
+     <height>411</height>
+    </size>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="search_tab">
+    <attribute name="title">
+     <string>검색 기능</string>
+    </attribute>
+    <widget class="QTabWidget" name="Search">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>531</width>
+       <height>391</height>
+      </rect>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::TabFocus</enum>
+     </property>
+     <property name="contextMenuPolicy">
+      <enum>Qt::CustomContextMenu</enum>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="ServiceArea">
+      <attribute name="title">
+       <string>휴게소명으로 검색</string>
+      </attribute>
+      <widget class="QTreeWidget" name="result_area">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>20</y>
+         <width>311</width>
+         <height>221</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>311</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <column>
+        <property name="text">
+         <string>휴게소명</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>방향</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>메뉴</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>가격</string>
+        </property>
+       </column>
+       <item>
+        <property name="text">
+         <string>옥천</string>
+        </property>
+        <property name="text">
+         <string>부천</string>
+        </property>
+        <property name="text">
+         <string>전골</string>
+        </property>
+        <property name="text">
+         <string>5000</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QListWidget" name="search_list_area">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>141</width>
+         <height>321</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>260</y>
+         <width>311</width>
+         <height>73</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="search_bar_area">
+        <item>
+         <widget class="QLineEdit" name="search_text_area"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="search_button_area">
+          <property name="text">
+           <string>검색</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="RouteName">
+      <attribute name="title">
+       <string>경로명으로 검색</string>
+      </attribute>
+      <widget class="QListWidget" name="search_list_route">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>141</width>
+         <height>321</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QTreeWidget" name="result_route">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>20</y>
+         <width>311</width>
+         <height>221</height>
+        </rect>
+       </property>
+       <column>
+        <property name="text">
+         <string>휴게소명</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>방향</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>메뉴</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>가격</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>260</y>
+         <width>311</width>
+         <height>73</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="search_bar_route">
+        <item>
+         <widget class="QLineEdit" name="search_text_route"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="search_button_route">
+          <property name="text">
+           <string>검색</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="chart_tab">
+    <attribute name="title">
+     <string>차트로 보기</string>
+    </attribute>
+   </widget>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>search_button_area</tabstop>
+  <tabstop>search_list_area</tabstop>
+  <tabstop>result_area</tabstop>
+  <tabstop>Search</tabstop>
+  <tabstop>search_button_route</tabstop>
+  <tabstop>search_list_route</tabstop>
+  <tabstop>result_route</tabstop>
+  <tabstop>Top</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>search_button_route</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>searching_route()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>467</x>
+     <y>333</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>537</x>
+     <y>352</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>search_button_area</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>searching_area()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>503</x>
+     <y>349</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>535</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>search_list_area</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>result_area</receiver>
+   <slot>update(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>113</x>
+     <y>154</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>276</x>
+     <y>155</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>search_list_route</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>result_route</receiver>
+   <slot>update(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>150</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>133</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>search_list_route</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>Dialog</receiver>
+   <slot>set_route(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>147</x>
+     <y>236</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>535</x>
+     <y>247</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>search_list_area</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>Dialog</receiver>
+   <slot>set_area(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>130</x>
+     <y>206</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>535</x>
+     <y>204</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>searching_route()</slot>
+  <slot>searching_area()</slot>
+  <slot>set_area(QModelIndex)</slot>
+  <slot>set_route(QModelIndex)</slot>
+ </slots>
+</ui>
