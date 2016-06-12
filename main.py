@@ -5,6 +5,9 @@
 import http.client
 import urllib
 
+# C/C++ 모듈 연동
+import price
+
 #GUI를 위한 PyQT 기본 모듈
 from PyQt5 import QtCore, QtGui, QtWidgets
 
@@ -148,6 +151,8 @@ class Ui_Dialog(object):
         self.result_area.topLevelItem(0).setText(2, self.menuList_area[QModelIndex.row()])
         self.result_area.topLevelItem(0).setText(3, self.salePriceList_area[QModelIndex.row()])
 
+
+
     #========================== 휴게소명 검색 ======================================
     def getDataFromServiceArea(self, serviceArea):
         conn = http.client.HTTPConnection("data.ex.co.kr")
@@ -195,7 +200,9 @@ class Ui_Dialog(object):
                     print("메뉴:", menu.text)
                     print('===========================')
                     self.search_list_area.addItem(serviceAreaName.text)
-                    
+
+                    # C/C++ 연동 함수 호출 및 출력
+                    print(price.check(menu.text))
         else:
             print('\n그런 곳 없음ㅋ')
             
