@@ -35,6 +35,17 @@ except AttributeError:
         return QtGui.QApplication.translate(context, text, disambig)
 
 class Ui_Dialog(object):
+    def __init__(self):
+        self.directionList_area =[]
+        self.serviceAreaNameList_area =[]
+        self.menuList_area =[]
+        self.salePriceList_area =[]
+
+        self.directionList_route =[]
+        self.serviceAreaNameList_route =[]
+        self.menuList_route =[]
+        self.salePriceList_route =[]
+        
     def setupUi(self, Dialog):
         Dialog.setObjectName(_fromUtf8("Dialog"))
         Dialog.resize(537, 411)
@@ -58,6 +69,7 @@ class Ui_Dialog(object):
         self.result_area.setGeometry(QtCore.QRect(190, 20, 311, 221))
         self.result_area.setMaximumSize(QtCore.QSize(311, 16777215))
         self.result_area.setObjectName(_fromUtf8("result_area"))
+        item_0 = QtGui.QTreeWidgetItem(self.result_area)
         self.search_list_area = QtGui.QListWidget(self.ServiceArea)
         self.search_list_area.setGeometry(QtCore.QRect(20, 20, 141, 321))
         self.search_list_area.setObjectName(_fromUtf8("search_list_area"))
@@ -81,6 +93,7 @@ class Ui_Dialog(object):
         self.result_route = QtGui.QTreeWidget(self.RouteName)
         self.result_route.setGeometry(QtCore.QRect(190, 20, 311, 221))
         self.result_route.setObjectName(_fromUtf8("result_route"))
+        item_0 = QtGui.QTreeWidgetItem(self.result_route)
         self.layoutWidget1 = QtGui.QWidget(self.RouteName)
         self.layoutWidget1.setGeometry(QtCore.QRect(190, 260, 311, 73))
         self.layoutWidget1.setObjectName(_fromUtf8("layoutWidget1"))
