@@ -240,9 +240,6 @@ class Ui_Dialog(object):
         self.search_bar_route.addWidget(self.search_button_route)
         self.Search.addTab(self.RouteName, _fromUtf8(""))
         self.Top.addTab(self.search_tab, _fromUtf8(""))
-        self.chart_tab = QtGui.QWidget()
-        self.chart_tab.setObjectName(_fromUtf8("chart_tab"))
-        self.Top.addTab(self.chart_tab, _fromUtf8(""))
         self.map_tab = QtGui.QWidget()
         self.map_tab.setObjectName(_fromUtf8("map_tab"))
         self.webView = QtWebKit.QWebView(self.map_tab)
@@ -286,7 +283,6 @@ class Ui_Dialog(object):
         self.search_button_route.setText(_translate("Dialog", "검색", None))
         self.Search.setTabText(self.Search.indexOf(self.RouteName), _translate("Dialog", "경로명으로 검색", None))
         self.Top.setTabText(self.Top.indexOf(self.search_tab), _translate("Dialog", "검색 기능", None))
-        self.Top.setTabText(self.Top.indexOf(self.chart_tab), _translate("Dialog", "차트로 보기", None))
         self.Top.setTabText(self.Top.indexOf(self.map_tab), _translate("Dialog", "지도로 보기", None))
 
     def searching_route(self):
