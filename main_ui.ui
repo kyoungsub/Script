@@ -47,7 +47,7 @@
     </size>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="search_tab">
     <attribute name="title">
@@ -69,7 +69,7 @@
       <enum>Qt::CustomContextMenu</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="ServiceArea">
       <attribute name="title">
@@ -110,20 +110,6 @@
          <string>가격</string>
         </property>
        </column>
-       <item>
-        <property name="text">
-         <string>옥천</string>
-        </property>
-        <property name="text">
-         <string>부천</string>
-        </property>
-        <property name="text">
-         <string>전골</string>
-        </property>
-        <property name="text">
-         <string>5000</string>
-        </property>
-       </item>
       </widget>
       <widget class="QListWidget" name="search_list_area">
        <property name="geometry">
@@ -232,8 +218,35 @@
      <string>차트로 보기</string>
     </attribute>
    </widget>
+   <widget class="QWidget" name="map_tab">
+    <attribute name="title">
+     <string>지도로 보기</string>
+    </attribute>
+    <widget class="QWebView" name="webView">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>481</width>
+       <height>341</height>
+      </rect>
+     </property>
+     <property name="url">
+      <url>
+       <string>about:blank</string>
+      </url>
+     </property>
+    </widget>
+   </widget>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKit/QWebView</header>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>search_button_area</tabstop>
   <tabstop>search_list_area</tabstop>
